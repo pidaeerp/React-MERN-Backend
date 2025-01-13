@@ -1,6 +1,6 @@
 # Backend MERN - Calendar "MERN": Unknow word.
 
-## DEvelopment
+## Development
 
 1. Instalar dependencias `npm install`
 2. Clonar el archivo `.env.template` y renombrarlo a `.env`
