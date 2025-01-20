@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 const { dbConnection } = require("./database/config");
+const path = require("path");
 //console.log(process.env);
 
 // Crear el servidor de express
@@ -24,6 +25,11 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 // TODO: CRUD: Eventos
 app.use("/api/events", require("./routes/events"));
+
+//Aplicar para publicar y colocar la aplicación REACT Front en el BACK carpeta PUBLIC
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 //Excuchar peticiones
 app.listen(process.env.PORT, () => {
